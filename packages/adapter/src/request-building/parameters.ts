@@ -1,4 +1,4 @@
-import { ParameterTarget } from '@api3/ois';
+import { ParameterTarget } from 'ois9';
 import * as authentication from './authentication';
 import * as cookies from './cookies';
 import { BuilderParameters, CachedBuildRequestOptions, RequestParameters } from '../types';
@@ -41,12 +41,12 @@ function buildFixedParameters(options: CachedBuildRequestOptions): BuilderParame
 
   return endpoint.fixedOperationParameters.reduce((acc, parameter) => {
     const { name, in: target } = parameter.operationParameter;
-
     // Double check that the parameter exists in the API specification
     const apiParameter = operation.parameters.find((ap) => ap.name === name);
     if (!apiParameter) {
       return acc;
     }
+    
 
     return appendParameter(acc, target, name, parameter.value);
   }, initalParameters());
@@ -77,8 +77,11 @@ function buildUserParameters(options: CachedBuildRequestOptions): BuilderParamet
 }
 
 export function buildParameters(options: CachedBuildRequestOptions): RequestParameters {
+  //console.log(options);
   const auth = authentication.buildParameters(options);
+  //console.log("auth is ",auth);
   const fixed = buildFixedParameters(options);
+  //console.log("fi ",fixed);
   const user = buildUserParameters(options);
 
   const cookie = cookies.buildHeader({ ...user.cookies, ...fixed.cookies, ...auth.cookies });

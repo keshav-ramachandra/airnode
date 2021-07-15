@@ -23,12 +23,28 @@ export function get(request: Request, config?: Config) {
   });
 }
 
-export function post(request: Request, config?: Config) {
-  return execute({
-    ...request,
-    url: `${request.baseUrl}${request.path}`,
-    method: 'post',
-    data: request.data,
-    timeout: config?.timeout,
-  });
+export function post(request: Request, config?: Config, raw?:boolean) {
+
+  switch(raw){
+    case true:
+      return execute({
+        ...request,
+        url: `${request.baseUrl}${request.path}`,
+        method: 'post',
+        data: request.data.data,
+        timeout: config?.timeout,
+      });
+    
+    default:
+      return execute({
+        ...request,
+        url: `${request.baseUrl}${request.path}`,
+        method: 'post',
+        data: request.data,
+        timeout: config?.timeout,
+      });
+
+  }
+  
+ 
 }

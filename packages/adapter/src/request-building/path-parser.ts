@@ -1,6 +1,6 @@
-import trimEnd from 'lodash/trimEnd';
-import trimStart from 'lodash/trimStart';
-import isEmpty from 'lodash/isEmpty';
+import trimEnd = require('lodash/trimEnd');
+import trimStart = require('lodash/trimStart');
+import isEmpty =require('lodash/isEmpty');
 import { Parameters } from '../types';
 
 function removeBraces(value: string) {

@@ -1,4 +1,4 @@
-import { OIS, ReservedParameterName } from '@api3/ois';
+import { OIS, ReservedParameterName } from 'ois9';
 
 export function buildOIS(overrides?: Partial<OIS>): OIS {
   return {

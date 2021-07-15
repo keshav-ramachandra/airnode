@@ -1,7 +1,7 @@
-import isArray from 'lodash/isArray';
-import isFinite from 'lodash/isFinite';
-import isNil from 'lodash/isNil';
-import isPlainObject from 'lodash/isPlainObject';
+import isArray = require( 'lodash/isArray');
+import isFinite = require('lodash/isFinite');
+import isNil = require('lodash/isNil');
+import isPlainObject = require('lodash/isPlainObject');
 import { BigNumber } from 'bignumber.js';
 import { ResponseType, ValueType } from '../types';
 

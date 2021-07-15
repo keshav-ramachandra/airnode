@@ -2,17 +2,19 @@ import { buildRequest } from './build-request';
 import * as http from '../clients/http';
 import { BuildRequestOptions, Config, Request } from '../types';
 
-export function executeRequest(request: Request, config?: Config) {
+export function executeRequest(request: Request, config?: Config, raw?:boolean) {
   switch (request.method) {
     case 'get':
       return http.get(request, config);
 
     case 'post':
-      return http.post(request, config);
+      //console.log("posr req", request);
+      return http.post(request, config, raw);
   }
 }
 
-export function buildAndExecuteRequest(options: BuildRequestOptions, config?: Config) {
+export function buildAndExecuteRequest(options: BuildRequestOptions, config?: Config, raw?:boolean) {
   const request = buildRequest(options);
-  return executeRequest(request, config);
+  //console.log("request is", request);
+  return executeRequest(request, config,raw);
 }

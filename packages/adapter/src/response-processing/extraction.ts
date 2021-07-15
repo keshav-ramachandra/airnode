@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js';
-import isUndefined from 'lodash/isUndefined';
+import isUndefined = require('lodash/isUndefined');
 import * as casting from './casting';
 import * as encoding from './encoding';
 import { ReservedParameters } from '../types';

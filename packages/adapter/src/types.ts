@@ -1,6 +1,6 @@
 /* eslint-disable functional/prefer-readonly-type */
 
-import { Endpoint, Method, OIS, Operation, SecuritySchemeSecret } from '@api3/ois';
+import { Endpoint, Method, OIS, Operation, SecuritySchemeSecret } from 'ois9';
 import { BigNumber } from 'bignumber.js';
 
 export interface BuildRequestOptions {
@@ -34,7 +34,8 @@ export interface Request {
   readonly path: string;
   readonly method: Method;
   readonly headers: { [key: string]: string };
-  readonly data: { [key: string]: string };
+  data: { [key: string]: string };
+  raw?:boolean
 }
 
 export interface Config {

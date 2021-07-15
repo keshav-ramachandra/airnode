@@ -1,4 +1,4 @@
-import { SecuritySchemeSecret } from '@api3/ois';
+import { SecuritySchemeSecret } from 'ois9';
 
 export const securitySchemeSecrets: SecuritySchemeSecret[] = [
   { securitySchemeName: 'myapiApiScheme', value: 'super-secret-key' },

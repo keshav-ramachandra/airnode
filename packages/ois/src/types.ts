@@ -60,6 +60,7 @@ export interface ApiSpecification {
 export interface EndpointOperation {
   method: Method;
   path: string;
+  raw?:boolean;
 }
 
 export interface EndpointParameter {

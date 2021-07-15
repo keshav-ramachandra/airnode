@@ -1,4 +1,4 @@
-import isEmpty from 'lodash/isEmpty';
+import isEmpty = require('lodash/isEmpty');
 import { Parameters } from '../types';
 
 interface CookieHeader {

@@ -1,5 +1,5 @@
-import { ApiSecurityScheme } from '@api3/ois';
-import isEmpty from 'lodash/isEmpty';
+import { ApiSecurityScheme } from 'ois9';
+import isEmpty = require('lodash/isEmpty');
 import { CachedBuildRequestOptions, Parameters } from '../types';
 
 interface Authentication {
